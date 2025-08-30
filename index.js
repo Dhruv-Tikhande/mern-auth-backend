@@ -5,8 +5,12 @@ require('dotenv').config(); // To use environment variables from .env file
 
 const app = express();
 
-//Enable CORS
-app.use(cors());
+// Enable CORS with specific options
+app.use(cors({
+    origin: '*', // Allows all origins
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allows all standard methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allows specific headers
+  }));
 
 // Connect to Database
 connectDB();
