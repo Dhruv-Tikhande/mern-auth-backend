@@ -22,6 +22,9 @@ app.use(express.json({ extended: false }));
 // A simple test route
 app.get('/', (req, res) => res.send('API is running...'));
 
+// A simple new test route
+app.get('/api/test', (req, res) => res.send('The test route is working!'));
+
 // Define Routes
 app.use('/api/auth', require('./routes/auth'));
 
