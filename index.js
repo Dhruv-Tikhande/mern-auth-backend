@@ -5,12 +5,20 @@ require('dotenv').config(); // To use environment variables from .env file
 
 const app = express();
 
-// Enable CORS with specific options
+// // Enable CORS with specific options
+// app.use(cors({
+//     origin: '*', // Allows all origins
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allows all standard methods
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Allows specific headers
+//   }));
+
+// Enable CORS with more specific options
 app.use(cors({
-    origin: '*', // Allows all origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allows all standard methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allows specific headers
-  }));
+  origin: 'https://my-auth-app-mlow.onrender.com', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 
 // Connect to Database
 connectDB();
