@@ -28,7 +28,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // A simple test route
-app.get('/', (req, res) => res.send('API is running...'));
+app.get('/', (req, res) => res.send('API is running...V5...Fresh Deploy'));
 
 // A simple new test route
 app.get('/api/test', (req, res) => res.send('The test route is working!'));
